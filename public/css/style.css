@@ -138,9 +138,9 @@ body{
     margin: 5px;
 }
 
-/* MAIN HOME */
+/* MAIN SECTIONS */
 
-.main-container.home section{
+.main-container section{
     position: relative;
     background-color: hsl(132, 76%, 92%);
     margin-bottom: 50px;
@@ -150,19 +150,19 @@ body{
     border-radius: 3px;
 }
 
-.main-container.home section img{
+.main-container section img{
     position: absolute;
     bottom: 5px;
     left: 5px;
     width: 50px;
 }
 
-.main-container.home section.model1{
+.main-container section.model1{
     display: flex;
     align-items: center;
 }
 
-.main-container.home section.model1 .titulo{
+.main-container section.model1 .titulo{
     flex: 1;
     border-right: 1px solid black;
     height: 80px;
@@ -170,26 +170,26 @@ body{
     align-items: center;
 }
 
-.main-container.home section.model1 .titulo h3{
+.main-container section.model1 .titulo h3{
     font-size: 2rem;
     padding: 0 65px;
     text-align: center;
     font-weight: bold;
 }
 
-.main-container.home section.model1 .text{
+.main-container section.model1 .text{
     flex: 2;
     font-size: 1.6rem;
     padding: 0 30px;
 }
 
-.main-container.home section.model1 .link{
+.main-container section.model1 .link{
     position: absolute;
     bottom: 5px;
     right: 5px;
 }
 
-.main-container.home section.model1 .link a{
+.main-container section.model1 .link a{
     color: black;
     text-decoration: none;
     font-size: 1.4rem;
@@ -199,26 +199,26 @@ body{
     padding: 4px;
 }
 
-.main-container.home section.model2{
+.main-container section.model2{
     height: 200px;
 }
 
-.main-container.home section.model2 h3{
+.main-container section.model2 h3{
     font-weight: bold;
     padding: 10px;
 }
 
-.main-container.home section.model3 {
+.main-container section.model3 {
     width: 40%;
     height: 70px;
 }
 
-.main-container.home section.model3 img{
+.main-container section.model3 img{
     top: 50%;
     transform: translate(0, -50%);
 }
 
-.main-container.home section.model3 .link{
+.main-container section.model3 .link{
     width: 100%;
     height: 70px;
     display: flex;
@@ -226,7 +226,7 @@ body{
     align-items: center;
 }
 
-.main-container.home section.model3 .link a{
+.main-container section.model3 .link a{
     color: black;
     font-size: 2rem;
 }
@@ -239,20 +239,6 @@ body{
     min-height: 300px;
 }
 
-.main-container.devocional .row{
-    width: 90%;
-    margin: 0 auto;
-}
-
-.main-container.devocional .card{
-    position: relative;
-    width: 200px;
-    min-height: 150px;
-    background: none;
-    border: 2px solid #008D1B;
-    border-radius: 10px;
-    transition: .5s all ease;
-}
 .main-container.devocional .card.isHoje{
     border: 3px solid #008D1B;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
@@ -277,18 +263,31 @@ body{
 
 .main-container.criar-devocional{
     background-color: #DBFAE1;
-    width: 50%;
+    width: 60%;
 }
 
 /* FORMULÁRIO */
 
 .main-container.criar-devocional .row label{
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: bold;
+}
+.main-container.criar-devocional .row input,
+.main-container.criar-devocional .row textarea{
+    font-size: 1.4rem;
 }
 
 .main-container.criar-devocional .row textarea{
     min-height: 100px;
+}
+
+/* MAIN DETALHAR DEVOCIONAL */
+
+.main-container.detalhar section{
+    min-height: 300px;
+}
+.main-container.detalhar section .titulo{
+    flex: .7;
 }
 
 /* FOOTER */

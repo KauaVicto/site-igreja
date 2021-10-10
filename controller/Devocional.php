@@ -15,21 +15,31 @@ class Devocional
     public function salvarBD()
     {
         $pdo = BD::conectar();
-        $sql = 'INSERT INTO devocionais (assunto, descricao, data) VALUES (:assunto, :descricao, :data)';
+        $sql = 'INSERT INTO devocionais (assunto, descricao, data, arquivo) VALUES (:assunto, :descricao, :data, :arquivo)';
         $stmt = $pdo->prepare($sql);
-        if($stmt->execute( array('assunto' =>$this->assunto, 'descricao' => $this->descricao, 'data' => $this->data))){
+        if($stmt->execute( array('assunto' => $this->assunto, 'descricao' => $this->descricao, 'data' => $this->data, 'arquivo' => $this->nome_arquivo))){
             header('location: /devocionais');
         }
     }
 
-    public static function buscarBD()
-    {
+    public static function buscarBD($id = null)
+    {   
         $pdo = BD::conectar();
-        $sql = 'SELECT * FROM devocionais';
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute();
+        if($id){
+            $sql = 'SELECT * FROM devocionais WHERE id = :id';
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute( array("id" => $id) );
+            return $stmt->fetch();
+        }else{
+            $sql = 'SELECT * FROM devocionais';
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }
 
-        return $stmt->fetchAll();
+        
+    
+        
 
     }
 }

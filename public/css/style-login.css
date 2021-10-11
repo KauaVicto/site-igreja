@@ -1,4 +1,4 @@
-.box, .container{
+.box{
     width: 300px;
     height: 300px;
     padding: 40px 0;
@@ -47,7 +47,7 @@ h1{
     bottom: 20px;
     right: 20px;
     text-align: center;
-    padding: 14px 40px;
+    padding: 10px 40px;
     width: 140px;
     outline: none;
     color: white;
@@ -57,6 +57,6 @@ h1{
 }
 .box button:hover{
     border-radius: 30px;
-    width: 180px;
+    width: 150px;
     background-color: #009978;
 }

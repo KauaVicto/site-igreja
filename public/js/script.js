@@ -22,33 +22,67 @@ $(document).ready(function () {
     })
 
     /* animar os campos de login */
-    $('#user').on('focus', function () {
-        $('#campo-user').css({
-            width: '220px',
-            borderRadius: '20px'
-        })
-    })
-    $('#user').on('blur', function () {
-        if ($('#user').val() == '') {
-            $('#campo-user').css({
-                width: '200px',
-                borderRadius: '10px'
-            })
-        }
+    // $('#user').on('focus', function () {
+    //     $('#campo-user').css({
+    //         width: '220px',
+    //         borderRadius: '20px'
+    //     })
+    //     $('#user').attr("placeholder", "")
+    //     $('#campo-user').css({
+    //         borderColor: '#009978'
+    //     })
 
-    })
-    $('#pass').on('focus', function () {
-        $('#campo-pass').css({
-            width: '220px',
-            borderRadius: '20px'
-        })
-    })
-    $('#pass').on('blur', function () {
-        if ($('#pass').val() == '') {
-            $('#campo-pass').css({
-                width: '200px',
-                borderRadius: '10px'
+    // })
+    // $('#user').on('blur', function () {
+    //     if ($('#user').val() == '') {
+    //         $('#campo-user').css({
+    //             width: '200px',
+    //             borderRadius: '10px'
+    //         })
+    //         $('#user').attr("placeholder", "(!) Digite o assunto")
+    //         $('#campo-user').css({
+    //             borderColor: '#b80000'
+    //         })
+    //     }
+
+    // })
+
+    // $('#pass').on('focus', function () {
+    //     $('#campo-pass').css({
+    //         width: '220px',
+    //         borderRadius: '20px'
+    //     })
+    // })
+    // $('#pass').on('blur', function () {
+    //     if ($('#pass').val() == '') {
+    //         $('#campo-pass').css({
+    //             width: '200px',
+    //             borderRadius: '10px'
+    //         })
+    //     }
+    // })
+
+    const campo_login = document.querySelectorAll('.campo')
+    const input_login = document.querySelectorAll('.campo input')
+
+    for(let i = 0;i < campo_login.length;i++){
+        input_login[i].addEventListener('focus', function(){
+            $(campo_login[i]).css({
+                width: '220px',
+                borderRadius: '20px',
+                borderColor: '#009978'
             })
-        }
-    })
+            $(input_login[i]).attr("placeholder", "")
+        })
+        input_login[i].addEventListener('blur', function(){
+            if($(input_login[i]).val() == ''){
+                $(campo_login[i]).css({
+                    width: '200px',
+                    borderRadius: '10px',
+                    borderColor: '#ff2d2d'
+                })
+                $(input_login[i]).attr("placeholder", "Preencha o campo!")
+            }
+        })
+    }
 })

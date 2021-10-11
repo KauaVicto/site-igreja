@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 
-<form class="box" action="" method="post">
+<form class="box box-login" action="" method="post">
     <h1>LOGIN</h1>
     <div class="campo" id="campo-user">
         <img src="/public/img/icons/icone_user.png" alt="">

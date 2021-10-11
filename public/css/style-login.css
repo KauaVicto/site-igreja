@@ -1,6 +1,5 @@
 .box{
-    width: 300px;
-    height: 300px;
+    
     padding: 40px 0;
     position: relative;
     background-color: rgba(43, 45, 49, 0.8);
@@ -8,16 +7,29 @@
     text-align: center;
     margin: 0 auto;
 }
+.box.box-login{
+    width: 300px;
+    height: 300px;
+}
+.box.box-devocional{
+    width: 600px;
+    height: 400px;
+}
 h1{
     color: white;
     text-transform: uppercase;
     font-weight: 500;
 }
+.box .row{
+    width: 100%;
+    justify-content: space-between;
+    margin: 0 auto;
+}
 .box div.campo{
     border: 2px solid #009978;
     margin: 20px auto;
     text-align: center;
-    width: 200px;
+    width: 250px;
     height: 40px;
     color: white;
     border-radius: 10px;
@@ -25,9 +37,15 @@ h1{
     display: flex;
     align-items: center;
 }
+.box div.campo.campo-textarea{
+    height: 100px;
+    width: 90%;
+    padding: 10px;
+}
 
-.box div.campo input{
-    width: 80%;
+.box div.campo input,
+.box div.campo textarea{
+    width: 100%;
     height: 100%;
     background: none;
     margin: auto 0;

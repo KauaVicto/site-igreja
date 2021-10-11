@@ -16,12 +16,15 @@ switch($uri_parse)
     case "/devocionais/criar":
         include_once 'view/devocional/criar.php';
         break;
-    case "/devocionais/detalhar?id=".$_GET['id']:
-        include_once "view/devocional/detalhar.php";
-        break;
     case "/devocionais/completa":
         header('location: ../public/pdf/devocionais/8b90d2bd6a8407d2a54c03ae863ce5821633743907.pdf');
         break;
+}
+
+if(isset($_GET['id'])){
+    if($uri_parse == "/devocionais/detalhar?id=".$_GET['id']){
+        include_once "view/devocional/detalhar.php";
+    }
 }
 
 require_once 'view/includes/footer.php';

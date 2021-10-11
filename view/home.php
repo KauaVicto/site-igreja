@@ -57,4 +57,6 @@
         <img src="public/img/icons/icone_boletim.png" alt="">
         <div class="link"><a href="/boletim">Baixar Boletim Semanal</a></div>
     </section>
+
+    <div class="controla-height"></div>
 </main>

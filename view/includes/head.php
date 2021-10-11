@@ -38,7 +38,7 @@
                         <a href="/agenda">Agenda</a>
                     </li>
                     <li>
-                        <a href="/sobre">Sobre</a>
+                        <a href="/usuario/login">Login</a>
                     </li>
                 </ul>
             </nav>

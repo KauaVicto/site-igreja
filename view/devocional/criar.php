@@ -41,7 +41,9 @@
                 <input class="form-control" type="file" id="formFile" name="arquivo_dev">
             </div>
         </div>
-        <button type="submit" class="botao">Criar Devocional</button>
+        <div class="div-botao"><button type="submit" class="botao">Criar Devocional</button></div>
 
     </form>
 </main>
+
+<div class="controla-height"></div>

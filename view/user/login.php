@@ -1,6 +1,27 @@
 <?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $login = filter_input(INPUT_POST, 'user');
+    $pass = filter_input(INPUT_POST, 'pass');
 
-/* 
-create table cargos( id INT PRIMARY KEY AUTO_INCREMENT, nome VARCHAR(100) )
-create table users( id INT PRIMARY KEY AUTO_INCREMENT, nome VARCHAR(100), id_cargo INTEGER, CONSTRAINT fk_userCargo FOREIGN KEY (id_cargo) REFERENCES cargos (id) ); 
-*/
+    Usuario::testarLogin($login, $pass);
+
+}
+
+?>
+
+
+<form class="box" action="" method="post">
+    <h1>LOGIN</h1>
+    <div class="campo" id="campo-user">
+        <img src="/public/img/icons/icone_user.png" alt="">
+        <input type="text" name="user" id="user" placeholder="Login" autocomplete="off">
+    </div>
+    <div class="campo" id="campo-pass">
+        <img src="/public/img/icons/icone_lock.png" alt="">
+        <input type="password" name="pass" id="pass" placeholder="Senha">
+    </div>
+
+    <button name="acesso">Acessar</button>
+</form>
+
+<div class="controla-height"></div>

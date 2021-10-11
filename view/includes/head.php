@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <!-- CSS da Aplicação -->
     <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/style-login.css">
 </head>
 
 <body>
@@ -38,7 +39,11 @@
                         <a href="/agenda">Agenda</a>
                     </li>
                     <li>
-                        <a href="/usuario/login">Login</a>
+                        <?php if(isset($_SESSION['logado'])){ ?>
+                            <a href="/usuario/sair"><?= $_SESSION['nome'] ?></a>
+                        <?php }else{ ?>
+                            <a href="/usuario/login">Login</a>
+                        <?php } ?>
                     </li>
                 </ul>
             </nav>

@@ -23,6 +23,18 @@ body{
     height: 150px;
 }
 
+/* barra de rolagem */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background:#12A348;
+}
+::-webkit-scrollbar-thumb {
+    background: #095225;
+    border-radius: 5px;
+}
+
 /* header */
 .header-container {
     display: flex;
@@ -62,7 +74,7 @@ body{
 }
 
 .header-container ul li:hover{
-    background-color: red;
+    background-color: rgb(214, 18, 18);
 }
 
 .header-container ul li a{

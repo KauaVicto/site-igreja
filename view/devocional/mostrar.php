@@ -25,7 +25,9 @@ $hoje = date('d/m/Y');
         </div>
     </div>
     <div class="div-botao">
-        <a href="/devocionais/criar" class="botao">Criar uma nova Devocional</a>
+        <?php if(isset($_SESSION['logado']) && $_SESSION['cargo'] == 1){ ?>
+            <a href="/devocionais/criar" class="botao">Criar uma nova Devocional</a>
+        <?php } ?>
     </div>
 </main>    
 

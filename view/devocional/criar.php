@@ -5,14 +5,7 @@
         $data = filter_input(INPUT_POST, 'data');
         $arquivo = explode('.', $_FILES['arquivo_dev']['name']);
 
-        /* Extensão do arquivo */
-        $extensao = $arquivo[1];
-        $nome_arquivo = md5($arquivo[0]).strtotime('now').'.'.$extensao;
-
-        move_uploaded_file($_FILES['arquivo_dev']['tmp_name'], "public/pdf/devocionais/$nome_arquivo");
-
-        $devocional = new Devocional($assunto, $descricao, $data, $nome_arquivo);
-        $pdo = $devocional->salvarBD();
+        $pdo = Devocional::salvarBD($assunto, $descricao, $data, $arquivo);
     }
 ?>
 
@@ -42,7 +35,6 @@
             </div>
         </div>
         <div class="div-botao"><button type="submit" class="botao">Criar Devocional</button></div>
-
     </form>
 </main>
 

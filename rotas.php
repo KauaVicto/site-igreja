@@ -19,6 +19,12 @@ switch($uri_parse)
     case "/devocionais/completa":
         header('location: ../public/pdf/devocionais/8b90d2bd6a8407d2a54c03ae863ce5821633743907.pdf');
         break;
+    case "/usuario/login":
+        include_once 'view/user/login.php';
+        break;
+    case "/usuario/sair":
+        include_once 'view/user/sair.php';
+        break;
 }
 
 if(isset($_GET['id'])){

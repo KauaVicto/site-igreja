@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
@@ -29,8 +29,17 @@
                     <li>
                         <a href="/informativos">Informativos</a>
                     </li>
-                    <li>
-                        <a href="/eventos">Eventos</a>
+                    <li class="dp-menu-pai" id="dp-menu-pai">
+                        <a href="/eventos" class="link-drop">Eventos</a>
+                        <ul class="dp-menu-filho" id="dp-menu-filho">
+                            <li><a href="#" class="link-drop">UPA</a></li>
+                            <div class="line-div"></div>
+                            <li><a href="#" class="link-drop">UMP</a></li>
+                            <div class="line-div"></div>
+                            <li><a href="#" class="link-drop">UPH</a></li>
+                            <div class="line-div"></div>
+                            <li><a href="#" class="link-drop">SAF</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="/devocionais">Devocionais</a>
@@ -38,10 +47,17 @@
                     <li>
                         <a href="/agenda">Agenda</a>
                     </li>
-                    <li>
-                        <?php if(isset($_SESSION['logado'])){ ?>
-                            <a href="/usuario/sair"><?= $_SESSION['nome'] ?></a>
-                        <?php }else{ ?>
+                    <li class="dp-menu-pai" id="dp-menu-pai">
+                        <?php if (isset($_SESSION['logado'])) { ?>
+                            <a href="#" class="link-drop"><?= $_SESSION['nome'] ?></a>
+                            <ul class="dp-menu-filho" id="dp-menu-filho">
+                                <li><a href="/devocionais/criar" class="link-drop">Criar Devocional</a></li>
+                                <div class="line-div"></div>
+                                <li><a href="/usuario/cadastrar-cargo" class="link-drop">Cadastrar Cargo</a></li>
+                                <div class="line-div"></div>
+                                <li><a href="/usuario/sair" class="link-drop">Sair</a></li>
+                            </ul>
+                        <?php } else { ?>
                             <a href="/usuario/login">Login</a>
                         <?php } ?>
                     </li>

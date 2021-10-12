@@ -21,54 +21,15 @@ $(document).ready(function () {
             .attr("placeholder", "")
     })
 
-    /* animar os campos de login */
-    // $('#user').on('focus', function () {
-    //     $('#campo-user').css({
-    //         width: '220px',
-    //         borderRadius: '20px'
-    //     })
-    //     $('#user').attr("placeholder", "")
-    //     $('#campo-user').css({
-    //         borderColor: '#009978'
-    //     })
 
-    // })
-    // $('#user').on('blur', function () {
-    //     if ($('#user').val() == '') {
-    //         $('#campo-user').css({
-    //             width: '200px',
-    //             borderRadius: '10px'
-    //         })
-    //         $('#user').attr("placeholder", "(!) Digite o assunto")
-    //         $('#campo-user').css({
-    //             borderColor: '#b80000'
-    //         })
-    //     }
-
-    // })
-
-    // $('#pass').on('focus', function () {
-    //     $('#campo-pass').css({
-    //         width: '220px',
-    //         borderRadius: '20px'
-    //     })
-    // })
-    // $('#pass').on('blur', function () {
-    //     if ($('#pass').val() == '') {
-    //         $('#campo-pass').css({
-    //             width: '200px',
-    //             borderRadius: '10px'
-    //         })
-    //     }
-    // })
-
+    /* anima e verifica os campos de formulários */
     const campo_login = document.querySelectorAll('.campo')
     const input_login = document.querySelectorAll('.campo input')
 
     for(let i = 0;i < campo_login.length;i++){
         input_login[i].addEventListener('focus', function(){
             $(campo_login[i]).css({
-                width: '220px',
+                width: '240px',
                 borderRadius: '20px',
                 borderColor: '#009978'
             })
@@ -77,7 +38,7 @@ $(document).ready(function () {
         input_login[i].addEventListener('blur', function(){
             if($(input_login[i]).val() == ''){
                 $(campo_login[i]).css({
-                    width: '200px',
+                    width: '220px',
                     borderRadius: '10px',
                     borderColor: '#ff2d2d'
                 })
@@ -85,4 +46,23 @@ $(document).ready(function () {
             }
         })
     }
+
+    /* anima o menu drop */
+    const dp_menu_pai = document.querySelectorAll('.dp-menu-pai')
+    const dp_menu_filho = document.querySelectorAll('.dp-menu-filho')
+
+    for(let i = 0; i < dp_menu_pai.length; i++){
+        $(dp_menu_pai[i]).on('mouseover', function(){
+            $(dp_menu_filho[i]).css({top: '100%', opacity: '1', zIndex: '1'})
+        })
+        $(dp_menu_pai[i]).on('mouseout', function(e){
+            $(dp_menu_filho[i]).css({opacity: '0', top: '-100%', zIndex: '-2'})
+        })
+        $(dp_menu_filho[i]).on('mouseover', function(e){
+            $(dp_menu_filho[i]).css({opacity: '0', top: '-100%', zIndex: '-2'})
+        })
+    }
+
+    
+
 })

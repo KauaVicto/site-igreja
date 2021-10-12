@@ -3,7 +3,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $login = filter_input(INPUT_POST, 'user');
     $pass = filter_input(INPUT_POST, 'pass');
 
-    Usuario::testarLogin($login, $pass);
+    Usuario::Logar($login, $pass);
 
 }
 
@@ -12,11 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <form class="box box-login" action="" method="post">
     <h1>LOGIN</h1>
-    <div class="campo" id="campo-user">
+    <div class="campo">
         <img src="/public/img/icons/icone_user.png" alt="">
         <input type="text" name="user" id="user" placeholder="Login" autocomplete="off">
     </div>
-    <div class="campo" id="campo-pass">
+    <div class="campo">
         <img src="/public/img/icons/icone_lock.png" alt="">
         <input type="password" name="pass" id="pass" placeholder="Senha">
     </div>

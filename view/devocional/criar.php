@@ -18,15 +18,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <div class="campo">
             <img src="/public/img/icons/icone_lock.png" alt="">
-            <input type="date" name="pass" id="pass" placeholder="Senha">
+            <input type="date" name="data" id="dia" placeholder="Senha">
         </div>
     </div>
-    <div class="campo campo-textarea">
+    <div class="campo-textarea">
         <img src="/public/img/icons/icone_lock.png" alt="">
         <textarea name="descricao" id="descricao" placeholder="Descrição"></textarea>
     </div>
-
-    <button name="acesso">Acessar</button>
+    <div class="campo campo-arquivo">
+        <img src="/public/img/icons/icone_lock.png" alt="">
+        <label for="formFile" class="botao-dev">Adicione um arquivo</label>
+        <input class="form-control" type="file" id="formFile" name="arquivo_dev">
+    </div>
+    <button name="acesso">Criar</button>
 </form>
 
 <div class="controla-height"></div>

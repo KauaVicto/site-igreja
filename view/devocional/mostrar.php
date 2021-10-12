@@ -1,6 +1,6 @@
 <?php
 $devocionais = Devocional::buscarBD();
-
+date_default_timezone_set('America/Bahia');
 $hoje = date('d/m/Y');
 ?>
 <main class="main-container devocional">
@@ -8,9 +8,9 @@ $hoje = date('d/m/Y');
     <div class="grid">
         <div class="row-col-4">
             <?php foreach (array_reverse($devocionais) as $key => $devocional) { 
-                if($key < 5){
+                if($key < 5){ 
+                    $data_devocional = date('d/m/Y', strtotime($devocional['data']));
             ?>
-                <?php $data_devocional = date('d/m/Y', strtotime($devocional['data'])); ?>
                 <div class="card g-col-3 <?= ($hoje == $data_devocional) ? 'isHoje' : 'notHoje' ?>">
                     <div class="card-body">
                         <div class="card-assunto">

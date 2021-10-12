@@ -2,7 +2,7 @@
 
 class Usuario
 {
-    public static function testarLogin($login, $senha)
+    public static function Logar($login, $senha)
     {
         $pdo = ConectBD::conectar();
 
@@ -24,5 +24,24 @@ class Usuario
         }else{
             return 'usuario nao encontrado';
         }
+    }
+
+    public static function verificaLogin($isLogin = false)
+    {
+        if(isset($_SESSION['logado']) == $isLogin){
+            header('location: /');
+        }
+    }
+
+    public static function buscaCargo()
+    {
+        $pdo = ConectBD::conectar();
+
+        $sql = "SELECT * FROM cargos";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+
+        $result = $stmt->fetchAll();
+        return $result;
     }
 }

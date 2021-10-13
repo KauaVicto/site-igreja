@@ -1,5 +1,5 @@
 .box{
-    
+
     padding: 40px 0;
     position: relative;
     background-color: rgba(43, 45, 49, 0.8);
@@ -90,8 +90,9 @@
 .box div textarea::placeholder{
     color: #d8d8d8;
 }
-.box div.campo img{
+.box img{
     margin: 0 5px;
+    width: 25px;
 }
 
 .box button{

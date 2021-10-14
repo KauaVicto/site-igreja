@@ -103,8 +103,8 @@ body{
 }
 
 .header-container ul.dp-menu-filho{
-    min-height: 150px;
     display: flex;
+    justify-content: start;
     flex-direction: column;
     position: absolute;
     top: -150px;

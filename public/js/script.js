@@ -53,13 +53,13 @@ $(document).ready(function () {
 
     for(let i = 0; i < dp_menu_pai.length; i++){
         $(dp_menu_pai[i]).on('mouseover', function(){
-            $(dp_menu_filho[i]).css({top: '100%', opacity: '1', zIndex: '1'})
+            $(dp_menu_filho[i]).css({top: '100%', opacity: '1', zIndex: '2'})
         })
         $(dp_menu_pai[i]).on('mouseout', function(e){
-            $(dp_menu_filho[i]).css({opacity: '0', top: '-100%', zIndex: '-2'})
+            $(dp_menu_filho[i]).css({opacity: '0', top: '-150px', zIndex: '-2'})
         })
         $(dp_menu_filho[i]).on('mouseover', function(e){
-            $(dp_menu_filho[i]).css({opacity: '0', top: '-100%', zIndex: '-2'})
+            $(dp_menu_filho[i]).css({opacity: '0', top: '-150px', zIndex: '-2'})
         })
     }
 

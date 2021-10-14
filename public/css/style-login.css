@@ -50,32 +50,31 @@
     display: flex;
     align-items: center;
 }
-.box div.campo.campo-arquivo{
-    width: 90%;
-    height: 50px;
-    border: none;
-}
 .box div.campo.campo-arquivo input{
     display: none;
 }
-.box div.campo.campo-arquivo label{
+.box div.campo.campo-arquivo{
+    width: 30%;
+    height: 50px;
     border: 2px solid #009978;
     background: none;
-    display: block;
-    text-align: center;
-    width: 190px;
-    padding: 10px 40px;
+    display: flex;
+    justify-content: space-around;
     outline: none;
     color: white;
     border-radius: 10px;
     transition: 0.25s;
     cursor: pointer;
 }
-.box div.campo.campo-arquivo label:hover{
+.box div.campo.campo-arquivo:hover{
     border-radius: 30px;
     width: 200px;
     background-color: #009978;
 }
+.box div.campo.campo-arquivo label{
+    padding-right: 10px;
+}
+
 .box div.campo input,
 .box div textarea{
     width: 100%;

@@ -34,6 +34,10 @@ body{
     background: #095225;
     border-radius: 10px;
 }
+/* Seleção*/
+::selection{
+    background-color: #008d1a75;
+}
 
 /* header */
 .header-container {
@@ -53,6 +57,8 @@ body{
     height: 60px;
     width: 70%;
     background-color: #0D7233;
+    position: relative;
+    z-index: 20;
 }
 
 .header-container ul{
@@ -93,6 +99,7 @@ body{
 /* MENU DROP */
 .header-container .dp-menu-pai{
     position: relative;
+    z-index: 5;
 }
 
 .header-container ul.dp-menu-filho{
@@ -100,14 +107,12 @@ body{
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 0;
+    top: -150px;
     z-index: -1;
     background-color: #0D7233;
     opacity: 0;
     transition: .3s all ease;
 }
-
-
 
 .header-container ul.dp-menu-filho .line-div{
     height: 1px;

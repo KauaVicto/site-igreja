@@ -6,7 +6,7 @@ $cargos = Usuario::buscaCargo();
     <h1>Cadastrar um Cargo</h1>
     <select class="campo" name="cargo" id="">
         <?php foreach ($cargos as $cargo) { ?>
-            <option value=""><?= $cargo['nome'] ?></option>
+            <option value="<?= $cargo['nome'] ?>"><?= $cargo['nome'] ?></option>
         <?php } ?>
     </select>
     <div class="campo">

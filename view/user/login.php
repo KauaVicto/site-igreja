@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <img src="/public/img/icons/icone_lock.png" alt="">
         <input type="password" name="pass" id="pass" placeholder="Senha">
     </div>
-
+    <div class="link-cadastro">Ainda não possui cadastro? <br><a href="/usuario/cadastrar">Clique aqui fazer um cadastro!</a></div>
     <button name="acesso">Acessar</button>
 </form>
 

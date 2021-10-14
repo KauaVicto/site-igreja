@@ -28,6 +28,10 @@ switch($uri_parse)
         Usuario::verificaLogin();
         include_once 'view/user/cadastrar_cargo.php';
         break;
+    case "/usuario/cadastrar":
+        Usuario::verificaLogin(true);
+        include_once 'view/user/cadastrar_usuario.php';
+        break;
 }
 
 if(isset($_GET['id'])){

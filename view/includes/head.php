@@ -51,13 +51,15 @@
                         <?php if (isset($_SESSION['logado'])) { ?>
                             <a href="#" class="link-drop"><?= ucfirst($_SESSION['nome_login']) ?></a>
                             <ul class="dp-menu-filho" id="dp-menu-filho">
-                                <?php if ( in_array($_SESSION['cargo'], $permissoes->criar_devocional) ) { ?>
-                                    <li><a href="/devocionais/criar" class="link-drop">Criar Devocional</a></li>
+                                <?php 
+                                    foreach($menu_drop['usuario'] as $item) { 
+                                        if(count(array_intersect($_SESSION['cargo'], $item['permissao'])) != 0){
+                                ?>
+                                
                                     <div class="line-div"></div>
-                                    <li><a href="/usuario/cadastrar-cargo" class="link-drop">Cadastrar Cargo</a></li>
-                                    <div class="line-div"></div>
-                                    <li><a href="/usuario/listar" class="link-drop">Listar Usuários</a></li>
-                                <?php } ?>
+                                    <li><a href="<?= $item['link'] ?>" class="link-drop"><?= $item['titulo'] ?></a></li>
+
+                                <?php }} ?>
                                 <div class="line-div"></div>
                                 <li><a href="/usuario/sair" class="link-drop">Sair</a></li>
                             </ul>

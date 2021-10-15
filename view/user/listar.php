@@ -13,11 +13,18 @@ $usuarios = Usuario::buscarUsuarios();
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($usuarios as $usuario) { ?>
+            <?php
+            foreach ($usuarios as $usuario) {
+                $cargos = Usuario::buscarCargos($usuario['id_user']);
+                $text_cargos = [];
+                foreach ($cargos as $cargo) {
+                    array_push($text_cargos, $cargo[0]);
+                }
+            ?>
                 <tr>
-                    <th scope="row"><?= $usuario['id_user'] ?></th>
+                    <td><?= $usuario['id_user'] ?></td>
                     <td><?= $usuario['nome'] ?></td>
-                    <td><?= $usuario['nome'] ?></td>
+                    <td><?= implode(', ', $text_cargos); ?></td>
                 </tr>
             <?php } ?>
         </tbody>

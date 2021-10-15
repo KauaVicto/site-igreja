@@ -6,17 +6,26 @@ class Usuario
     {
         $pdo = ConectBD::conectar();
 
-        $sql = "SELECT * FROM users WHERE login = :login";
+        $sql = "SELECT users.login as login,
+        users.senha as senha,
+        possui_cargo.id_cargo as cargo
+        FROM users 
+        INNER JOIN possui_cargo on users.id_user = possui_cargo.id_user
+        WHERE login = :login";
+
         $stmt = $pdo->prepare($sql);
         $stmt->execute( array("login" => $login) );
-        $result = $stmt->fetch();
+        $result = $stmt->fetchAll();
 
         if($result){
             $senha = md5($senha);
-            if($result['senha'] == $senha){
+            if($result[0]['senha'] == $senha){
                 $_SESSION['logado'] = true;
-                $_SESSION['nome_login'] = $result['login'];
-                $_SESSION['cargo'] = $result['id_cargo'];
+                $_SESSION['nome_login'] = $result[0]['login'];
+                $_SESSION['cargo'] = [];
+                foreach($result as $r){
+                    array_push($_SESSION['cargo'], $r['cargo']);
+                }
                 header('location: /');
             }else{
                 return 'senha incorreta';
@@ -31,7 +40,7 @@ class Usuario
         if(isset($_SESSION['logado']) == $isLogin){
             header('location: /');
         }
-        if(isset($_SESSION['logado']) && !in_array($_SESSION['cargo'], $permissao)){
+        if(isset($_SESSION['logado']) && count(array_intersect($_SESSION['cargo'], $permissao)) == 0){
             header('location: /');
         }
     }
@@ -40,13 +49,12 @@ class Usuario
     {
         $pdo = ConectBD::conectar();
 
-        if($id == null){
+        if($id == null){ /* buscar toda lista de cargos */
             $sql = "SELECT * FROM cargos";
-        }else{
-            "SELECT cargos.nome from users 
-            inner join possui_cargo on users.id_user = possui_cargo.id_user 
+        }else{ /* buscar apenas os cargos de um usuário */
+            $sql = "SELECT cargos.nome from possui_cargo 
             inner join cargos on cargos.id_cargo = possui_cargo.id_cargo 
-            where users.id_user = $id";
+            where possui_cargo.id_user = $id";
         }
         
         $stmt = $pdo->prepare($sql);

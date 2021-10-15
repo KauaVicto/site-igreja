@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11-Out-2021 às 19:24
+-- Tempo de geração: 15-Out-2021 às 16:24
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 8.0.11
 
@@ -37,7 +37,9 @@ CREATE TABLE `cargos` (
 --
 
 INSERT INTO `cargos` (`id_cargo`, `nome`) VALUES
-(1, 'Pastor');
+(0, 'Admin'),
+(1, 'Pastor'),
+(2, 'Membro');
 
 -- --------------------------------------------------------
 
@@ -62,7 +64,13 @@ INSERT INTO `devocionais` (`id`, `assunto`, `descricao`, `data`, `arquivo`) VALU
 (2, 'Amor', 'Ame a Deus', '2021-10-08', NULL),
 (3, 'Perdão', 'Perdoe', '2021-10-07', NULL),
 (6, 'Perdão', 'Perdoe', '2021-10-11', 'd41d8cd98f00b204e9800998ecf8427e1633952066.'),
-(7, 'Alegria', 'Fique alegre em Cristo', '2021-10-11', 'd41d8cd98f00b204e9800998ecf8427e1633962343.');
+(7, 'Alegria', 'Fique alegre em Cristo', '2021-10-11', 'd41d8cd98f00b204e9800998ecf8427e1633962343.'),
+(8, 'Libertação', 'Liberte-se do pecado', '2021-10-11', 'd41d8cd98f00b204e9800998ecf8427e1633980339.'),
+(9, 'teste', 'teste23', '2021-10-11', 'f02fa590388c63d00801491b647768381633980413.pdf'),
+(10, 'teste123', 'teste', '2021-10-11', 'f02fa590388c63d00801491b647768381633980474.pdf'),
+(11, 'fasdfadf', 'asdfasdfasdf', '2021-10-11', 'f02fa590388c63d00801491b647768381633980531.pdf'),
+(13, 'teste', 'descrição teste', '2021-10-14', 'd41d8cd98f00b204e9800998ecf8427e1634239829.'),
+(14, 'Amor', 'Ame uns aos outros', '2021-10-15', 'd41d8cd98f00b204e9800998ecf8427e1634303527.');
 
 -- --------------------------------------------------------
 
@@ -73,15 +81,19 @@ INSERT INTO `devocionais` (`id`, `assunto`, `descricao`, `data`, `arquivo`) VALU
 CREATE TABLE `users` (
   `id_user` int(11) NOT NULL,
   `nome` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `id_cargo` int(11) DEFAULT NULL
+  `id_cargo` int(11) DEFAULT NULL,
+  `login` varchar(15) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `senha` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `users`
 --
 
-INSERT INTO `users` (`id_user`, `nome`, `id_cargo`) VALUES
-(1, 'George', 1);
+INSERT INTO `users` (`id_user`, `nome`, `id_cargo`, `login`, `senha`) VALUES
+(1, 'George', 1, 'george', '827ccb0eea8a706c4c34a16891f84e7b'),
+(3, 'Layla Adryellen Oliveira Gomes', 2, 'layla', '827ccb0eea8a706c4c34a16891f84e7b'),
+(4, 'Admin', 0, 'admin', '827ccb0eea8a706c4c34a16891f84e7b');
 
 --
 -- Índices para tabelas despejadas
@@ -114,19 +126,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `cargos`
 --
 ALTER TABLE `cargos`
-  MODIFY `id_cargo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_cargo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `devocionais`
 --
 ALTER TABLE `devocionais`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restrições para despejos de tabelas

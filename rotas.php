@@ -11,7 +11,7 @@ switch($uri_parse)
         include_once 'view/devocional/mostrar.php';
         break;
     case "/devocionais/criar":
-        Usuario::verificaLogin();
+        Usuario::verificaLogin(false, $permissoes->criar_devocional);
         include_once 'view/devocional/criar.php';
         break;
     case "/devocionais/completa":
@@ -24,8 +24,12 @@ switch($uri_parse)
     case "/usuario/sair":
         include_once 'view/user/sair.php';
         break;
+    case "/usuario/listar":
+        Usuario::verificaLogin(false, $permissoes->listar_usuario);
+        include_once 'view/user/listar.php';
+        break;
     case "/usuario/cadastrar-cargo":
-        Usuario::verificaLogin();
+        Usuario::verificaLogin(false, $permissoes->cadastrar_cargo);
         include_once 'view/user/cadastrar_cargo.php';
         break;
 }

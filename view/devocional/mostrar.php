@@ -25,7 +25,7 @@ $hoje = date('d/m/Y');
         </div>
     </div>
     <div class="div-botao">
-        <?php if(isset($_SESSION['logado']) && $_SESSION['cargo'] == 1){ ?>
+        <?php if(isset($_SESSION['logado']) && in_array($_SESSION['cargo'], $permissoes->criar_devocional)){ ?>
             <a href="/devocionais/criar" class="botao">Criar uma nova Devocional</a>
         <?php } ?>
     </div>

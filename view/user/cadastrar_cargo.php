@@ -1,13 +1,17 @@
 <?php
-$cargos = Usuario::buscaCargo();
+$cargos = Usuario::buscarCargos();
 ?>
 
 <form class="box box-login" action="" method="post">
     <h1>Cadastrar um Cargo</h1>
     <select class="campo" name="cargo" id="">
-        <?php foreach ($cargos as $cargo) { ?>
+
+        <?php foreach ($cargos as $cargo) { 
+            if($cargo['id_cargo'] != 0){ // para não listar o Admin
+        ?>
             <option value="<?= $cargo['nome'] ?>"><?= $cargo['nome'] ?></option>
-        <?php } ?>
+        <?php }} ?>
+
     </select>
     <div class="campo">
         <img src="/public/img/icons/icone_lock.png" alt="">

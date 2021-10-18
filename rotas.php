@@ -2,15 +2,15 @@
 
 require_once 'view/includes/head.php';
 
-switch($uri_parse)
+switch($url)
 {
-    case '/':
+    case 'home':
         include_once 'view/home.php';
         break;
-    case '/devocionais':
+    case 'devocionais':
         include_once 'view/devocional/mostrar.php';
         break;
-    case "/devocionais/criar":
+    case "devocionais/criar":
         Usuario::verificaLogin(false, $permissoes->criar_devocional);
         include_once 'view/devocional/criar.php';
         break;

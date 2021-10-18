@@ -38,10 +38,10 @@ class Usuario
     public static function verificaLogin($isLogin = false, $permissao = [])
     {
         if(isset($_SESSION['logado']) == $isLogin){
-            header('location: /');
+            header('location: ../home');
         }
         if(isset($_SESSION['logado']) && count(array_intersect($_SESSION['cargo'], $permissao)) == 0){
-            header('location: /');
+            header('location: ../home');
         }
     }
 

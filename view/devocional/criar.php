@@ -13,20 +13,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <h1>Criar Devocional</h1>
     <div class="row">
         <div class="campo">
-            <img src="/public/img/icons/icone_assunto.svg" alt="">
+            <img src="/<?= ROOT ?>/public/img/icons/icone_assunto.svg" alt="">
             <input type="text" name="assunto" id="assunto" placeholder="Assunto" autocomplete="off">
         </div>
         <div class="campo">
-            <img src="/public/img/icons/icone_calendario.svg" alt="">
+            <img src="/<?= ROOT ?>/public/img/icons/icone_calendario.svg" alt="">
             <input type="date" name="data" id="dia">
         </div>
     </div>
     <div class="campo-textarea">
-        <img src="/public/img/icons/icone_descricao.svg" alt="">
+        <img src="/<?= ROOT ?>/public/img/icons/icone_descricao.svg" alt="">
         <textarea name="descricao" id="descricao" placeholder="Descrição"></textarea>
     </div>
     <div class="campo campo-arquivo">
-        <img src="/public/img/icons/icone_file.svg" alt="">
+        <img src="/<?= ROOT ?>/public/img/icons/icone_file.svg" alt="">
         <label for="formFile" class="botao-dev">Adicione um arquivo</label>
         <input class="form-control" type="file" id="formFile" name="arquivo_dev">
     </div>

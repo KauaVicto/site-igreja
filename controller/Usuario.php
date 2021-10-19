@@ -26,7 +26,7 @@ class Usuario
                 foreach($result as $r){
                     array_push($_SESSION['cargo'], $r['cargo']);
                 }
-                header('location: /');
+                header('location: /'.ROOT.'/home');
             }else{
                 return 'senha incorreta';
             }

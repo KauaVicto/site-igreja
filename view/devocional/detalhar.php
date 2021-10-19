@@ -1,5 +1,5 @@
 <?php
-    $id = filter_input(INPUT_GET, 'id');
+    $id = $id_devocional;
     $devocional = Devocional::buscarBD($id);
 ?>
 

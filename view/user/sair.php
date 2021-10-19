@@ -2,4 +2,4 @@
 
 unset($_SESSION['logado']);
 
-header("location: /");
+header('location: /'.ROOT.'/home');

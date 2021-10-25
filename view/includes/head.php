@@ -10,8 +10,8 @@
     <!-- CSS Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <!-- CSS da Aplicação -->
-    <link rel="stylesheet" href="/<?= ROOT ?>/public/css/style.css">
-    <link rel="stylesheet" href="/<?= ROOT ?>/public/css/style-login.css">
+    <link rel="stylesheet" href="<?= ROOT ?>/public/css/style.css">
+    <link rel="stylesheet" href="<?= ROOT ?>/public/css/style-login.css">
 </head>
 
 <body>
@@ -20,11 +20,11 @@
 
     <header>
         <div class="header-container">
-            <img src="/<?= ROOT ?>/public/img/ipb_logo.png" alt="Logo da IPB">
+            <img src="<?= ROOT ?>/public/img/ipb_logo.png" alt="Logo da IPB">
             <nav>
                 <ul>
                     <li>
-                        <a href="/<?= ROOT ?>/home">Home</a>
+                        <a href="<?= ROOT ?>/home">Home</a>
                     </li>
                     <li>
                         <a href="informativos">Informativos</a>
@@ -42,7 +42,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="/<?= ROOT ?>/devocional">Devocionais</a>
+                        <a href="<?= ROOT ?>/devocional">Devocionais</a>
                     </li>
                     <li>
                         <a href="/agenda">Agenda</a>
@@ -62,10 +62,10 @@
                                 <?php }
                                 } ?>
                                 <div class="line-div"></div>
-                                <li><a href="/<?= ROOT ?>/usuario/sair" class="link-drop">Sair</a></li>
+                                <li><a href="<?= ROOT ?>/usuario/sair" class="link-drop">Sair</a></li>
                             </ul>
                         <?php } else { ?>
-                            <a href="/<?= ROOT ?>/usuario/login">Login</a>
+                            <a href="<?= ROOT ?>/usuario/login">Login</a>
                         <?php } ?>
                     </li>
                 </ul>

@@ -18,7 +18,7 @@ $hoje = date('d/m/Y');
                             </div>
                             <p class="card-date"><b>Dia:</b> <?= ($hoje == $data_devocional) ? 'hoje' : $data_devocional ?></p>
 
-                            <a href="/<?= ROOT ?>/devocional/<?= $devocional['id'] ?>" class="botao">Acessar</a>
+                            <a href="<?= ROOT ?>/devocional/<?= $devocional['id'] ?>" class="botao">Acessar</a>
                         </div>
                     </div>
             <?php }
@@ -26,8 +26,8 @@ $hoje = date('d/m/Y');
         </div>
     </div>
     <div class="div-botao">
-        <?php if (count(array_intersect($_SESSION['cargo'], $item['permissao'])) != 0) { ?>
-            <a href="/devocionais/criar" class="botao">Criar uma nova Devocional</a>
+        <?php if (isset($_SESSION['cargo']) && count(array_intersect($_SESSION['cargo'], $item['permissao'])) != 0) { ?>
+            <a href="<?= ROOT ?>/devocional/criar" class="botao">Criar uma nova Devocional</a>
         <?php } ?>
     </div>
 </main>

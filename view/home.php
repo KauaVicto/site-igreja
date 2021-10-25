@@ -1,11 +1,14 @@
 <?php
     $devocionais = Devocional::buscarBD();
     $hoje = date('Y-m-d');
-    $devocional_diaria = '';
+    $devocional_titulo = '';
+    $devocional_descricao = '';
 
     foreach($devocionais as $devocional){
         if($devocional['data'] == $hoje){
-            $devocional_diaria = $devocional['descricao'];
+            $devocional_id = $devocional['id'];
+            $devocional_titulo = $devocional['assunto'];
+            $devocional_descricao = $devocional['descricao'];
         }
     }
 ?>
@@ -21,15 +24,16 @@
         <img src="public/img/icons/icone_igreja.png" alt="">
     </section>
 
-    <?php if($devocional_diaria != ''){ ?>
+    <?php if($devocional_descricao != ''){ ?>
     <section class="model1">
         <div class="titulo">
             <h3>Devocional Diária</h3>
         </div>
         <div class="text">
-            <?= $devocional_diaria ?>
+            <h2><?= $devocional_titulo ?></h2>
+            <?= (strlen($devocional_descricao) > 250) ? substr($devocional_descricao, 0, 250).'...' : $devocional_descricao ?>
         </div>
-        <div class="link"><a href="/devocional">DEVOCIONAL COMPLETA</a></div>
+        <div class="link"><a href="<?= ROOT ?>/devocional/<?= $devocional_id ?>">DEVOCIONAL COMPLETA</a></div>
         <img src="public/img/icons/icone_devocional.png" alt="">
     </section>
     <?php } ?>

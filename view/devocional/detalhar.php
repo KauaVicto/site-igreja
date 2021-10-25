@@ -11,7 +11,11 @@
         <div class="text">
             <?= $devocional['descricao'] ?>
         </div>
-        <div class="link"><a href="#" id="devocional_completa">DEVOCIONAL COMPLETA</a></div>
-        <img src="../../public/img/icons/icone_devocional.png" alt="">
+        <?php if($devocional['arquivo']){ ?>
+            <div class="link"><a href="<?= ROOT ?>/public/pdf/devocionais/<?= $devocional['arquivo'] ?>" id="devocional_completa" target="blank">ABRIR PDF</a></div>
+        <?php } ?>
+        <img src="<?= ROOT ?>/public/img/icons/icone_devocional.png" alt="">
     </section>
 </main>
+
+<div class="controla-height"></div>

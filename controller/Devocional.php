@@ -4,18 +4,20 @@ class Devocional
 {
     public static function salvarBD($assunto, $descricao, $data, $arquivo)
     {
-        var_dump($arquivo);
+        $name = explode('.', $arquivo['name']);
         /* Extensão do arquivo */
-        $extensao = $arquivo[1];
-        $nome_arquivo = md5($arquivo[0]) . strtotime('now') . '.' . $extensao;
+        $extensao = $name[1];
 
-        move_uploaded_file($_FILES['arquivo_dev']['tmp_name'], "public/pdf/devocionais/$nome_arquivo");
+        $nome_arquivo = md5($name[0]) . strtotime('now') . '.' . $extensao;
+
+        move_uploaded_file($arquivo['tmp_name'], "public/pdf/devocionais/$nome_arquivo");
 
         $pdo = ConectBD::conectar();
         $sql = 'INSERT INTO devocionais (assunto, descricao, data, arquivo) VALUES (:assunto, :descricao, :data, :arquivo)';
         $stmt = $pdo->prepare($sql);
+
         if ($stmt->execute(array('assunto' => $assunto, 'descricao' => $descricao, 'data' => $data, 'arquivo' => $nome_arquivo))) {
-            header('location: /devocionais');
+            header('location: '. ROOT .'/devocional');
         }
     }
 

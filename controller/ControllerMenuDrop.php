@@ -4,17 +4,17 @@ $menu_drop = [
     'usuario' => [
         array(
             'titulo' => 'Criar Devocional',
-            'link' => '/devocionais/criar',
+            'link' => ROOT. '/devocional/criar',
             'permissao' => $permissoes->criar_devocional
         ),
         array(
             'titulo' => 'Cadastrar Cargo',
-            'link' => '/usuario/cadastrar-cargo',
+            'link' => ROOT. '/usuario/cadastrar-cargo',
             'permissao' => $permissoes->cadastrar_cargo
         ),
         array(
             'titulo' => 'Listar Usuários',
-            'link' => '/usuario/listar',
+            'link' => ROOT. '/usuario/listar',
             'permissao' => $permissoes->listar_usuario
         )
     ]

@@ -107,6 +107,7 @@ body{
     justify-content: start;
     flex-direction: column;
     position: absolute;
+    text-align: center;
     top: -150px;
     z-index: -1;
     background-color: #0D7233;

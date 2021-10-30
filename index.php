@@ -3,7 +3,7 @@ session_start();
 
 $permissoes = json_decode(file_get_contents('controller/permissoes.json'));
 
-define('ROOT', '/kaua/site-igreja');
+define('ROOT', '/site-igreja');
 
 $url = $_GET['url'] ?? 'home';
 
